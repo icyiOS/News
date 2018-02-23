@@ -12,6 +12,7 @@
 		28BA666720403B67009D2092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BA666520403B67009D2092 /* Main.storyboard */; };
 		28BA666920403B67009D2092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BA666820403B67009D2092 /* Assets.xcassets */; };
 		28BA666C20403B67009D2092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BA666A20403B67009D2092 /* LaunchScreen.storyboard */; };
+		28BA6676204042CF009D2092 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BA6675204042CF009D2092 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		28BA666820403B67009D2092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28BA666B20403B67009D2092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28BA666D20403B67009D2092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28BA6675204042CF009D2092 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BA6676204042CF009D2092 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				28BA666020403B67009D2092 /* News */,
 				28BA665F20403B67009D2092 /* Products */,
+				28BA6674204042CE009D2092 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		28BA6674204042CE009D2092 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28BA6675204042CF009D2092 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +86,7 @@
 				28BA665A20403B67009D2092 /* Sources */,
 				28BA665B20403B67009D2092 /* Frameworks */,
 				28BA665C20403B67009D2092 /* Resources */,
+				28BA667320404152009D2092 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,6 +143,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28BA667320404152009D2092 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28BA665A20403B67009D2092 /* Sources */ = {
@@ -276,6 +307,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 999Z8LAQ98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = News/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lichaoyi.News;
@@ -291,6 +326,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 999Z8LAQ98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = News/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lichaoyi.News;

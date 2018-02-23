@@ -6,6 +6,7 @@
 //  Copyright © 2018 李超逸. All rights reserved.
 //
 
+import Alamofire
 import UIKit
 
 class ViewController: UIViewController {
