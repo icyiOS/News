@@ -20,12 +20,18 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "ニュース"
+        
         requestNews()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pushToDetail" {
+            guard let destination = segue.destination as? DetailViewController else { return }
+            guard let article = sender as? Article else { return }
+            
+            destination.urlString = article.url
+        }
     }
     
     private func requestNews() {
@@ -67,6 +73,11 @@ class ViewController: UITableViewController {
         cell.titleLabel.text = article.title
         cell.contentLabel.text = article.description
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = articles[indexPath.row]
+        performSegue(withIdentifier: "pushToDetail", sender: article)
     }
 }
 
