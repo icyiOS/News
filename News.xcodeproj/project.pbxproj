@@ -14,6 +14,7 @@
 		28BA666C20403B67009D2092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BA666A20403B67009D2092 /* LaunchScreen.storyboard */; };
 		28BA6676204042CF009D2092 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BA6675204042CF009D2092 /* Alamofire.framework */; };
 		28BA667820404E65009D2092 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA667720404E65009D2092 /* DataModel.swift */; };
+		28BA667A2040535E009D2092 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA66792040535E009D2092 /* ArticleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		28BA666D20403B67009D2092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28BA6675204042CF009D2092 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		28BA667720404E65009D2092 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		28BA66792040535E009D2092 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				28BA666120403B67009D2092 /* AppDelegate.swift */,
 				28BA666320403B67009D2092 /* ViewController.swift */,
+				28BA66792040535E009D2092 /* ArticleCell.swift */,
 				28BA667720404E65009D2092 /* DataModel.swift */,
 				28BA666520403B67009D2092 /* Main.storyboard */,
 				28BA666820403B67009D2092 /* Assets.xcassets */,
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BA667A2040535E009D2092 /* ArticleCell.swift in Sources */,
 				28BA666420403B67009D2092 /* ViewController.swift in Sources */,
 				28BA666220403B67009D2092 /* AppDelegate.swift in Sources */,
 				28BA667820404E65009D2092 /* DataModel.swift in Sources */,

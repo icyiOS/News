@@ -9,7 +9,13 @@
 import Alamofire
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    
+    var articles = [Article]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +41,12 @@ class ViewController: UIViewController {
             .request(url,
                      method: .get,
                      parameters: parameters)
-            .responseData(completionHandler: { responseData in
+            .responseData(completionHandler: { [weak self] responseData in
                 let decoder = JSONDecoder()
                 if let data = responseData.data {
                     do {
                         let result = try decoder.decode(NewsResponse.self, from: data)
+                        self?.articles = result.articles
                     } catch {
                         // json decode error
                     }
@@ -48,6 +55,18 @@ class ViewController: UIViewController {
                     // no data response
                 }
             })
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as! ArticleCell
+        let article = articles[indexPath.row]
+        cell.titleLabel.text = article.title
+        cell.contentLabel.text = article.description
+        return cell
     }
 }
 
