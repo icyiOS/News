@@ -43,30 +43,40 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2d4-1M-UMy">
-                                            <rect key="frame" x="12" y="12" width="351" height="21"/>
+                                            <rect key="frame" x="104" y="12" width="259" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nl-NQ-THd">
-                                            <rect key="frame" x="12" y="45" width="351" height="21"/>
+                                            <rect key="frame" x="104" y="45" width="259" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFs-Ek-BX5">
+                                            <rect key="frame" x="12" y="12" width="80" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="20c-A0-VOx"/>
+                                                <constraint firstAttribute="height" constant="60" id="Zde-57-qht"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2nl-NQ-THd" firstAttribute="leading" secondItem="S03-qY-e3y" secondAttribute="leading" constant="12" id="8ZU-hy-GO2"/>
                                         <constraint firstItem="2nl-NQ-THd" firstAttribute="top" secondItem="2d4-1M-UMy" secondAttribute="bottom" constant="12" id="8pU-h6-xpG"/>
                                         <constraint firstAttribute="trailing" secondItem="2d4-1M-UMy" secondAttribute="trailing" constant="12" id="G0N-so-biC"/>
-                                        <constraint firstItem="2d4-1M-UMy" firstAttribute="leading" secondItem="S03-qY-e3y" secondAttribute="leading" constant="12" id="IwO-Sb-aq7"/>
+                                        <constraint firstItem="JFs-Ek-BX5" firstAttribute="leading" secondItem="S03-qY-e3y" secondAttribute="leading" constant="12" id="K7w-Cd-2Me"/>
                                         <constraint firstAttribute="trailing" secondItem="2nl-NQ-THd" secondAttribute="trailing" constant="12" id="PPE-uz-HLW"/>
                                         <constraint firstAttribute="bottom" secondItem="2nl-NQ-THd" secondAttribute="bottom" constant="12" id="WN5-R0-cC6"/>
+                                        <constraint firstItem="2d4-1M-UMy" firstAttribute="leading" secondItem="JFs-Ek-BX5" secondAttribute="trailing" constant="12" id="gTg-H3-Qaq"/>
+                                        <constraint firstItem="JFs-Ek-BX5" firstAttribute="top" secondItem="S03-qY-e3y" secondAttribute="top" constant="12" id="h74-md-gGh"/>
+                                        <constraint firstItem="2nl-NQ-THd" firstAttribute="leading" secondItem="JFs-Ek-BX5" secondAttribute="trailing" constant="12" id="qfd-c1-mdX"/>
                                         <constraint firstItem="2d4-1M-UMy" firstAttribute="top" secondItem="S03-qY-e3y" secondAttribute="top" constant="12" id="usd-ID-eOp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contentLabel" destination="2nl-NQ-THd" id="NJF-cC-R0O"/>
+                                    <outlet property="myImageView" destination="JFs-Ek-BX5" id="qsW-4q-MVQ"/>
                                     <outlet property="titleLabel" destination="2d4-1M-UMy" id="Hpi-M0-Xvu"/>
                                 </connections>
                             </tableViewCell>
@@ -83,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VN-Ie-aFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="41"/>
+            <point key="canvasLocation" x="456.80000000000001" y="40.929535232383813"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="XG8-ON-y6e">

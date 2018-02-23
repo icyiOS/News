@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import AlamofireImage
 import UIKit
 
 class ViewController: UITableViewController {
@@ -38,10 +39,8 @@ class ViewController: UITableViewController {
         let url = URL(string: "https://newsapi.org/v2/top-headlines")!
         
         let parameters: Parameters = [
-            "country": "jp",
+            "country": "us",
             "apiKey": "a32fccf9076e41b1ae21b28e40e749fc",
-            "pageSize": "20",
-            "page": "1"
         ]
         Alamofire
             .request(url,
@@ -72,6 +71,15 @@ class ViewController: UITableViewController {
         let article = articles[indexPath.row]
         cell.titleLabel.text = article.title
         cell.contentLabel.text = article.description
+        
+        if let urlToImage = article.urlToImage,
+            let url = URL(string: urlToImage) {
+            cell.myImageView.af_setImage(withURL: url,
+                                         placeholderImage: #imageLiteral(resourceName: "placeholder"))
+        } else {
+            cell.myImageView.image = nil
+        }
+        
         return cell
     }
     
